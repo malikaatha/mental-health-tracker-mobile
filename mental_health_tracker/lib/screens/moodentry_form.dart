@@ -136,7 +136,7 @@ class _MoodEntryFormPageState extends State<MoodEntryFormPage> {
                                   child: const Text('OK'),
                                   onPressed: () {
                                     Navigator.pop(context);
-                                    _formKey.currentState!.reset(); // Reset form setelah dialog ditutup
+                                    _formKey.currentState!.reset(); 
                                   },
                                 ),
                               ],

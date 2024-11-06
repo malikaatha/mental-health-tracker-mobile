@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mental_health_tracker/screens/moodentry_form.dart';
+import '../screens/moodentry_form.dart';
 
 class ItemHomepage {
   final String name;
@@ -20,21 +20,21 @@ class ItemCard extends StatelessWidget {
       borderRadius: BorderRadius.circular(12),
       child: InkWell(
         onTap: () {
-
-          if (item.name == "Tambah Mood") {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => const MoodEntryFormPage(),
-              ),
-            );
-          }
-          else {
             ScaffoldMessenger.of(context)
-              ..hideCurrentSnackBar()
-              ..showSnackBar(SnackBar(
-                  content: Text("Kamu telah menekan tombol ${item.name}!")));
-          }
+                ..hideCurrentSnackBar()
+                ..showSnackBar(SnackBar(
+                    content: Text("Kamu telah menekan tombol ${item.name}!")));
+
+            // Navigate ke route yang sesuai (tergantung jenis tombol)
+            if (item.name == "Tambah Mood") {
+                // TODO: Gunakan Navigator.push untuk melakukan navigasi ke MaterialPageRoute yang mencakup TrackerFormPage.
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                    builder: (context) => const MoodEntryFormPage(),
+                )
+            );
+            }
 
         },
         child: Container(
